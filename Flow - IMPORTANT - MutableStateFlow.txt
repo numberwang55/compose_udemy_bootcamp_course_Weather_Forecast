@@ -1,0 +1,13 @@
+Flow
+
+Inside "TopAppBarWeather" & "FavouriteScreen" there were variables accessing the "FavouriteScreenViewModel" which wouldn't reflect the change in state (change in state wanted was deleting the last and only item in the list and changin the favourite 'Heart' symbol from filled to unfilled). visually these remained on screen/unchanged. 
+
+variables responsible were StateFlows in viewModel:
+	private val _favList = MutableStateFlow<List<Favourite>>(emptyList())
+	val favList = _favList.asStateFlow()
+
+then accessed via "collectAsState". 
+
+However, changing the varibale in the viewModel to the below:
+	val listOfFavourites = repository.getFavourites()
+resulted in the desired state change being reflected in the UI. 

@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">compose_udemy_bootcamp_course_Weather_Forecast</string>
+    <string name="display_app_name">Weather Forecast</string>
+    <string name="app_version">Weather App v.0.1</string>
+    <string name="api_info">Weather API by: http://api.openweathermap.org</string>
+</resources>
